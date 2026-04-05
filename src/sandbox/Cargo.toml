@@ -11,4 +11,10 @@ path = "lib.rs"
 serde = { version = "1.0", features = ["derive"] }
 thiserror = "1.0"
 tracing = "0.1"
+
+[target.'cfg(windows)'.dependencies]
+winapi = { version = "0.3", features = ["jobapi2", "winbase", "winnt", "handleapi", "minwindef"] }
+
+[target.'cfg(unix)'.dependencies]
 nix = { version = "0.27", features = ["sched", "socket"] }
+libc = "0.2"
