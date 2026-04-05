@@ -160,8 +160,8 @@ token.verify(&required_capabilities)?;
 **主要模块**：
 
 - `manager/` - 沙箱生命周期管理
-- `seccomp/` - 系统调用过滤
-- `namespace/` - Linux 命名空间隔离
+- `job_object/` - Windows 作业对象隔离
+- `access_control/` - Windows 访问控制
 
 **使用示例**：
 
@@ -169,8 +169,8 @@ token.verify(&required_capabilities)?;
 use moda_core::sandbox::Sandbox;
 
 let sandbox = Sandbox::new()
-    .with_seccomp(true)
-    .with_namespace(true)
+    .with_job_object(true)
+    .with_access_control(true)
     .build()?;
 ```
 
